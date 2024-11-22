@@ -1,6 +1,5 @@
 package ua.maestr0.todolist.service;
 
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ua.maestr0.todolist.model.Note;
 
@@ -53,7 +52,7 @@ public class NoteService {
     private Long generateUniqueId() {
         Long id;
         do {
-            id = (long) (idGenerator.nextInt(Integer.MAX_VALUE) + 1); // Уникальний ID (позитивний)
+            id = (long) (idGenerator.nextInt(Integer.MAX_VALUE) + 1);
         } while (notes.containsKey(id));
         return id;
     }
