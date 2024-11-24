@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="uk">
+<head>
+    <title th:text="${note.id != null} ? 'Редагувати Нотатку' : 'Додати Нотатку'">Редагувати Нотатку</title>
+</head>
+<body>
+<h1 th:text="${note.id != null} ? 'Редагувати Нотатку' : 'Додати Нотатку'">Редагувати Нотатку</h1>
+<form th:action="@{/note/edit}" method="post">
+    <input type="hidden" name="id" th:value="${note.id}" />
+    <div>
+        <label for="title">Заголовок:</label>
+        <input type="text" name="title" id="title" th:value="${note.title}" />
+    </div>
+    <div>
+        <label for="content">Вміст:</label>
+        <textarea name="content" id="content" th:text="${note.content}"></textarea>
+    </div>
+    <button type="submit">Зберегти</button>
+</form>
+</body>
+</html>
