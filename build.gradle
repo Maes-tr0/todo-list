@@ -13,24 +13,35 @@ java {
 	}
 }
 
-configurations {
-	compileOnly {
-		extendsFrom annotationProcessor
-	}
-}
-
 repositories {
 	mavenCentral()
 }
 
 dependencies {
+	// Spring Boot Starter Dependencies
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+	// Lombok for reducing boilerplate code
 	compileOnly 'org.projectlombok:lombok'
-	runtimeOnly 'org.postgresql:postgresql'
 	annotationProcessor 'org.projectlombok:lombok'
+
+	// PostgreSQL Database Driver
+	runtimeOnly 'org.postgresql:postgresql'
+
+	// Testing
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+	// Flyway PostgresSQL
+	implementation 'org.flywaydb:flyway-core:9.0.0'
+	implementation 'org.postgresql:postgresql:42.7.2'
+
+	// SLF4J API (Default Logging via Logback)
+	implementation 'org.slf4j:slf4j-api:2.0.16'
+
+	// Dotenv
+	implementation 'io.github.cdimascio:dotenv-java:3.0.2'
 }
 
 tasks.named('test') {
