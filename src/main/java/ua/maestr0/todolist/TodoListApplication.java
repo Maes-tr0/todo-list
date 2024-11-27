@@ -1,5 +1,6 @@
 package ua.maestr0.todolist;
 
+import io.github.cdimascio.dotenv.Dotenv;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -11,3 +12,4 @@ public class TodoListApplication {
 		SpringApplication.run(TodoListApplication.class, args);
 	}
 }
+
